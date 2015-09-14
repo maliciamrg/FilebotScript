@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ "$#" -ne 1 ]; then
+    echo "Illegal number of parameters (repertoire du film)"
+	exit 0
+fi
+echo "$1"
+sudo chmod -R 777 "$1"
+filebot -get-missing-subtitles "$1"
+filebot -get-missing-subtitles "$1" --lang fr
